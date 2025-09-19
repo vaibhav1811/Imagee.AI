@@ -12,13 +12,18 @@ import { fileURLToPath } from "url";
 const PORT = process.env.PORT || 4000 ;
 const app = express()
 
+const corsOptions = {
+    origin: "https://imagee-ai-1.onrender.com", 
+    credentials: true, // if you are using cookies or auth headers 
+};
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // const __dirname = path.resolve();
 
 app.use(express.json())
-app.use(cors())
+app.use(cors(corsOptions))
 await connectDB()
 
 app.use('/api/user',userRouter)
