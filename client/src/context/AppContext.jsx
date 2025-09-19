@@ -4,7 +4,11 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 
-export const AppContext = createContext();
+
+
+export const AppContext = createContext({
+  backendUrl: "https://imagee-ai-2.onrender.com",
+});
 
 const AppContextProvider = (props) => {
 
