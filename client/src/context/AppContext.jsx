@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 export const AppContext = createContext({
-  backendUrl: "https://imagee-ai-2.onrender.com",
+  backendUrl: "http://localhost:4000",
 });
 
 const AppContextProvider = (props) => {

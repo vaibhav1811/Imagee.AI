@@ -24,6 +24,9 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.json())
 app.use(cors(corsOptions))
+app.use(cors({
+    origin:process.env.FRONTEND_URL,
+}))
 await connectDB()
 
 app.use('/api/user',userRouter)
